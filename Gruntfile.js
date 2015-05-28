@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-release');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.initConfig({
     mochaTest: {
@@ -24,6 +25,27 @@ module.exports = function(grunt) {
     watch: {
       files: ['Gruntfile.js', 'test/**/*.coffee'],
       tasks: ['test']
+    },
+    copy: {
+      main: {
+        files: [{
+            expand: true,
+            cwd: 'src/',
+            src: ['**'],
+            dest: 'node_modules/hubot/scripts/'
+        }]
+      }
+    },
+    shell: {
+      hubot: {
+        command: 'bin/hubot --name bot',
+        options: {
+          stderr: false,
+          execOptions: {
+              cwd: 'node_modules/hubot/'
+          }
+        }
+      }
     }
   });
 
@@ -37,4 +59,5 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['mochaTest']);
   grunt.registerTask('test:watch', ['watch']);
   grunt.registerTask('default', ['test']);
+  grunt.registerTask('hubot', ['copy', 'shell']);
 };
