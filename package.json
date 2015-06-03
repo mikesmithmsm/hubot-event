@@ -1,7 +1,7 @@
 {
-  "name": "hubot-rightscale",
+  "name": "hubot-event",
   "version": "1.1.0",
-  "description": "Rightscale Hubot Script",
+  "description": "Event Recording Hubot Script",
   "main": "index.coffee",
   "dependencies": {
     "coffee-script": "*"
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikesmithmsm/hubot-rightscale.git"
+    "url": "https://github.com/mikesmithmsm/hubot-event.git"
   },
   "keywords": [
     "hubot",
@@ -36,7 +36,7 @@
   "author": "Mikey Smith",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mikesmithmsm/hubot-rightscale/issues"
+    "url": "https://github.com/mikesmithmsm/hubot-event/issues"
   },
-  "homepage": "https://github.com/mikesmithmsm/hubot-rightscale"
+  "homepage": "https://github.com/mikesmithmsm/hubot-event"
 }
