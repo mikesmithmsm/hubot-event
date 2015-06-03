@@ -10,7 +10,7 @@ describe 'rightscale', ->
       respond: sinon.spy()
       hear: sinon.spy()
 
-    require('../src/helloworld')(@robot)
+    require('../src/event')(@robot)
 
   it 'registers a respond listener', ->
-    expect(@robot.respond).to.have.been.calledWith(/(test me) (.*)/i)
+    expect(@robot.respond).to.have.been.calledWith(/(info me) (.*)/i)

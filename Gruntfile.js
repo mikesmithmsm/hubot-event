@@ -38,12 +38,9 @@ module.exports = function(grunt) {
     },
     shell: {
       hubot: {
-        command: 'bin/hubot --name bot',
+        command: 'test.sh',
         options: {
           stderr: false,
-          execOptions: {
-              cwd: 'node_modules/hubot/'
-          }
         }
       }
     }
