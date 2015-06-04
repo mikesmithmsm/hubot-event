@@ -1,6 +1,6 @@
 {
   "name": "hubot-event",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Event Recording Hubot Script",
   "main": "index.coffee",
   "dependencies": {
@@ -31,12 +31,15 @@
   },
   "keywords": [
     "hubot",
-    "rightscale"
+    "event"
   ],
   "author": "Mikey Smith",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mikesmithmsm/hubot-event/issues"
   },
-  "homepage": "https://github.com/mikesmithmsm/hubot-event"
+  "homepage": "https://github.com/mikesmithmsm/hubot-event",
+  "directories": {
+    "test": "test"
+  }
 }
