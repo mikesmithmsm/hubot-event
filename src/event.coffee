@@ -43,9 +43,9 @@ setInformation = (key, value, msg, robot) ->
   info = getInformationRecord(key, robot)
   info.addEvent value, new Date()
 
-forceInformation = (key, time ,value, msg, robot) ->
+forceInformation = (key, value, time, msg, robot) ->
   info = getInformationRecord(key, robot)
-  info.addEvent value, Date.parse(time)
+  info.addEvent value, new Date(time)
 
 clearInformation = (key, msg, robot) ->
   robot.brain.remove("event.#{key}")
