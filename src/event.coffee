@@ -25,6 +25,8 @@ class Information
 module.exports = (robot) ->
   robot.hear /(event set) (.*) (.*)/i, (msg) ->
     setInformation(msg.match[2], msg.match[3], msg, robot)
+  robot.hear /(event force) (.*) (.*) (.*)/i, (msg) ->
+    forceInformation(msg.match[2], msg.match[3], msg.match[4], msg, robot)
   robot.hear /(event clear) (.*)/i, (msg) ->
     clearInformation(msg.match[2], msg, robot)
   robot.respond /(event me) (.*)/i, (msg) ->
@@ -40,6 +42,10 @@ getInformation = (key, msg, robot) ->
 setInformation = (key, value, msg, robot) ->
   info = getInformationRecord(key, robot)
   info.addEvent value, new Date()
+
+forceInformation = (key, time ,value, msg, robot) ->
+  info = getInformationRecord(key, robot)
+  info.addEvent value, Date.parse(time)
 
 clearInformation = (key, msg, robot) ->
   robot.brain.remove("event.#{key}")
